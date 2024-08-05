@@ -203,13 +203,18 @@ td:nth-child(1) {
     border-bottom: none;
     }
 
- #turn {
+ #turn 
+ {
      font-weight: bold;
      text-transform: capitalize;
      text-align: center;
      font-size: 16pt;
-     background-color: #faffc7;
-     width: 340px;
+     padding-top: 1em;
+ }
+ #readyToShop
+ {
+    display: flex;
+    justify-content: space-between;
  }
 .bodyabout {
     padding: 1em;
@@ -400,8 +405,53 @@ form
 #nameLast
 {
     display: flex;
+    justify-content: space-around;
+    padding-bottom: 2em;
+}
+.holder
+{
+    display: flex;
+    padding-bottom: 3em;
+    justify-content: space-around;
+}
+.holder input
+{
+    padding: 0em;
+    margin: 3px;
+}
+.holder label
+{
+    padding:1em;
 }
 
+#submitPayment button
+{
+   background-color: #faffc7;
+   margin: 1em; 
+}
+
+#submitPayment button:hover
+{
+    background-color: aliceblue;
+}
+.checkoutButtons
+{
+    display: flex;
+    justify-content: space-around;
+
+}
+.checkoutButtons button
+{
+    background-color: #faffc7;
+    padding: 3em;
+    margin-bottom: 2em;
+    border-radius: 30%;
+    border: none;
+}
+.checkoutButtons :hover
+{
+    background-color: aliceblue;
+}
 .textboxLong
 {
     width: 10em;
@@ -409,14 +459,17 @@ form
     margin-left:1em;
 }
 
-.checkoutTitles
+#checkoutTitles
 {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     height: 3em;
 }
 
-.checkoutTitles{
-    font-size: 55em;
+.textboxLong
+{
+    background-color: aliceblue;
+    border: none;
+    border-radius: 10%;
 }

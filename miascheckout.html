@@ -15,7 +15,7 @@
                     </ul>
                 </header>
             <!--this page will be used for the checkout first we must import and total and products, then we must ask for an email and a credit card info-->
-            <div id="checkoutTitles">Total Items</div>
+            <div id="checkoutTitles"><h3>Total Items</h3></div>
             <div id = "checkoutList">
                 <!--this will be used to display total coffelist || total amount || taxes and fees for shipping-->
             </div> 
@@ -27,30 +27,44 @@
             <!--we must use label/input using the for label and pointing towards the id of the input-->
             <hr></hr>
             <div id="nameLast"> 
-                <input type="hidden" id="dataToPass" name="dataToPass" value="">   
-                <label for = "nameCustomer">Name</label>
-                <input type="text" id="nameCustomer" name="nameCustomer" class="textboxLong"> 
-                <label for = "lastCustomer">Last Name</label>
-                <input type = "text" id="lastCustomer" name="lastCustomer" class="textboxLong">
-            </div>        
-
-                <label for = "email">Email:</label>
-                <input type="email" id="email" name="email" class="textboxLong">
-                
-                <label for = "cardNum">Card Number</label>
-                <input type="number" id="cardNum" name="cardNum" class="textboxLong">
-
-                <label for = "expDate">Expiration Date</label>
-                <input type="date" id="expDate" name="expDate">
-
-                <label for = "CVV"> CVV</label>
-                <input type="number" id="CVV" name="CVV">
-
-                <button onclick="clearCart(); writeToTxt();" type ="submit" id="submitPayment">Submit!</button>
+                <div>
+                    <input type="hidden" id="dataToPass" name="dataToPass" value="">   
+                    <label for = "nameCustomer">First Name</label>
+                    <input type="text" id="nameCustomer" name="nameCustomer" class="textboxLong"> 
+                </div>
+                <div>
+                    <label for = "lastCustomer">Last Name</label>
+                    <input type = "text" id="lastCustomer" name="lastCustomer" class="textboxLong">
+                </div>
+            </div> 
+            <div class="holder">       
+                <div id="emailBox">
+                    <label for = "email">Email:</label>
+                    <input type="email" id="email" name="email" class="textboxLong">
+                </div>
+            </div>
+            <div class="holder">
+                <div class="holder"> 
+                    <div>   
+                        <label for = "cardNum">Card Number</label>
+                        <input type="number" id="cardNum" name="cardNum" class="textboxLong">
+                    </div>
+                    <div>
+                        <label for = "expDate">Expiration Date</label>
+                        <input type="date" id="expDate" name="expDate" class="textboxLong">
+                    </div>
+                    <div>
+                    <label for = "CVV"> CVV</label>
+                    <input type="number" id="CVV" name="CVV" class="textboxLong">
+                </div>  
+            </div>
+            <div class="checkoutButtons">
+                <button onclick="clearCart(); writeToTxt();" type ="submit" class="checkoutButtons">Submit!</button>
+            </div>
             </form><!--//clearCart();//onclick = "writeToTxt();"-->
-            
-            <button onclick="returnToCart();">Return to cart</button>
-
+                <div class="checkoutButtons">
+                <button onclick="returnToCart();" class="checkoutButtons">Return to cart</button>
+            </div>
 
             <script type="text/javascript" src="cart.js"></script>
 
