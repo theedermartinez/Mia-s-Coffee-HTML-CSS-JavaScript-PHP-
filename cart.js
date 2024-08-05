@@ -20,7 +20,7 @@ function addedtocart()
 function addedSpanish() 
 {
     $globalList.push("spanish");
-    alert($globalList); //will add the spanish word to the list
+    //alert($globalList); //will add the spanish word to the list
     sessionStorage.setItem('$globalList',JSON.stringify($globalList)); // adds the item to the stored json list
     //console.log(sessionStorage); for testing
 }
@@ -32,7 +32,7 @@ function addedSpanish()
 function addedColombian()
 {
     $globalList.push("colombian");
-    alert($globalList); //will add the spanish word to the list
+    //alert($globalList); //will add the spanish word to the list
     sessionStorage.setItem('$globalList',JSON.stringify($globalList));
     console.log(sessionStorage);
 }
@@ -43,7 +43,7 @@ function addedColombian()
 function addedBrazilian()
 {
     $globalList.push("brazilian");
-    alert($globalList); //will add the spanish word to the list
+    //alert($globalList); //will add the spanish word to the list
     sessionStorage.setItem('$globalList',JSON.stringify($globalList)); //javascript to json!!!!
     console.log(sessionStorage);
 
@@ -175,7 +175,7 @@ function clearCart()
 {
     sessionStorage.removeItem('$globalList');
     alert('Cart is now empty');
-    console.log(sessionStorage);
+    //console.log(sessionStorage);
     location.reload();
 }
 
@@ -287,7 +287,7 @@ function writeToTxt()
     xhr.send(JSON.stringify($globalList)); // php is able to deal with the json array
 
     xhr.onload = alert("has been sent successfully");
-    alert($globalList);
+   // alert($globalList);
 }
 /**
  * lets try this we push the list to a hidden field and a separate php file gets it!!!
@@ -296,6 +296,6 @@ function writeTextGood()
 {
     part = document.getElementById("dataToPass");
     let stringToPass = JSON.stringify($globalList);
-    alert(stringToPass);
+    //alert(stringToPass);
     part.value = stringToPass;
 }
