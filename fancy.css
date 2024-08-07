@@ -45,7 +45,7 @@ header > .miatopname img{
 header > .mainmenu{
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     height: 3em;
     font-size: 1.5em;
     vertical-align: middle;
