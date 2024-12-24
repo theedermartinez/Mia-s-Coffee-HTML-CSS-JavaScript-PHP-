@@ -1,8 +1,12 @@
 <?php
 /**
+ * Author: Eder Martinez
+ * Last update: 12/24/24
+ * Summary: This is the backend of the website. Adds the objects to invisble informaiton then uses javascript to 
  * php is a losely typed language meaning variables do not have to be declared before using them
  */
-//target file
+
+//target file to write the objects to
 $infoFile = 'toProcess.txt';
 
 //to sanitize: to remove all invalid data or characters.
@@ -50,6 +54,7 @@ function assignData()
         if(validateEmail($email))
         {
             //echo "Email is valid! ";
+            
         }
         else
         {
@@ -80,12 +85,13 @@ function assignData()
     if($errorFlag ==true)
     {
         reloadPage("miascheckout.html");
+        alertMaker("An error has occurred. Your information is valid.");
         return $errorFlag;
     }
     else // if we find no errors in our program we write to the txt file 
     {
         $whiteSpc = "\n";//we use this to put a new line at the end of each client
-        $cardInfo = [$dataToPass,$name,$last,$email,$cardNum,$expDate,$CVV, $whiteSpc]; // we put the info on an array
+        $cardInfo = [$dataToPass, $name,$last,$email,$cardNum,$expDate,$CVV, $whiteSpc]; // we put the info on an array
         addToTxt($cardInfo); //we write to file using an array
         addTotalCoffeePurchased();
         return $errorFlag; //we return the flag saying we guud
@@ -100,6 +106,7 @@ function assignData()
 function validateEmail($localEmail)
 {
     $isItvalid = filter_var($localEmail,FILTER_VALIDATE_EMAIL);//validate filter email is  php bulilt in constant 
+    echo  '<script type="text/javascript">alert(" "message"+'.$isItvalid.'")</script>';
     return $isItvalid;
 }
 
@@ -116,15 +123,22 @@ function addToTxt($arrayTOuse)
       fclose($file);
 }
 
+/**
+ * Makes allers using the given message 
+ */
 function alertMaker($msg)
 {
     echo  '<script type="text/javascript">alert("'.$msg.'")</script>';//we use a literal string with a string concactination (using periods)
 }
 
+/**
+ * Reload the page
+ */
 function reloadPage($page)
 {
     echo '<script type = "text/javascript">window.location.href = "'.$page.'"</script>';
 }
+
 
 function addTotalCoffeePurchased()
 {   
@@ -145,8 +159,8 @@ function main()
 
     if($errorFlag == true)
     {
-        //echo "errors found \n Try Reloading the page!!! Use the backbutton ";
-        //header('Location: miascheckout.html');
+        echo "errors found \n Try Reloading the page!!! Use the backbutton ";
+        header('Location: miascheckout.html');
     }
     else
     {

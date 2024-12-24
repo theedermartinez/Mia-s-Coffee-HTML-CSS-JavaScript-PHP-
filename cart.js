@@ -1,4 +1,6 @@
 /**
+ * Author: Eder Martinez
+ * Last Edited: 12/24/2024
  * @fileoverview This script will be used to process the requests made by the website. Allowing it to add to cart, delete, reset and checkout
  * it will work by using different functions which are called upon by the html file.
  * Credit to where credit is due, I made this while using JAVASCRIPT AND JQUERRY  by jon Duckett. specifically understanding json, and ajax and the details of javascript.
@@ -179,6 +181,12 @@ function clearCart()
     location.reload();
 }
 
+//We must be careful to only clear cart if it passes all the checks
+function checkIfClear()
+{
+
+}
+
 // this function is used to switch pages to a checkout page (mias cart .html)
 /**
  * takes the user to the secret checkout page hehehe
@@ -279,6 +287,8 @@ function returnToCart()
 /**
  * writes final order to txt file without an enter so we can write our php
  * //WE MUST CATCH IT ON THE OTHER SIDE USING PHP CODE!!!!!!!!!!!!!
+ *  * obsolete method can delete!!
+
  */
 function writeToTxt()
 {
